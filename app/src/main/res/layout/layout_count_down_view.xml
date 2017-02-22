@@ -13,6 +13,7 @@
             android:progressDrawable="@drawable/drawable_circular_progress" />
 
         <TextView
+            android:textColor="#FFFFFF"
             android:id="@+id/view_progress_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

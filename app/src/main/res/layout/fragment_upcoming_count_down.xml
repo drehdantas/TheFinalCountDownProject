@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3F3F3F"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/days"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:hint="Enter days"
+        android:inputType="number"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <EditText
+        android:layout_below="@+id/days"
+        android:id="@+id/hours"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:hint="Enter hours"
+        android:inputType="number"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <EditText
+        android:layout_below="@+id/hours"
+        android:id="@+id/minutes"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:hint="Enter minutes"
+        android:inputType="number"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <EditText
+        android:layout_below="@+id/minutes"
+        android:id="@+id/seconds"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:hint="Enter seconds"
+        android:inputType="number"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <Button
+        android:layout_below="@+id/seconds"
+        android:id="@+id/startTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Start CountDown" />
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/startTimer"
+        android:id="@+id/item_upcoming_time_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:visibility="gone"
+        android:weightSum="4">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+
+            <com.project.andredantas.thefinalcountdownproject.widget.CircleCountDownView
+                android:id="@+id/item_upcoming_day_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/item_upcoming_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_upcoming_day_progress"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                android:text="Dyas"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <com.project.andredantas.thefinalcountdownproject.widget.CircleCountDownView
+                android:id="@+id/item_upcoming_hour_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/item_upcoming_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_upcoming_hour_progress"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                android:text="Hours"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+
+            <com.project.andredantas.thefinalcountdownproject.widget.CircleCountDownView
+                android:id="@+id/item_upcoming_minute_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/item_upcoming_minute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_upcoming_minute_progress"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                android:text="Minutes"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <com.project.andredantas.thefinalcountdownproject.widget.CircleCountDownView
+                android:id="@+id/item_upcoming_seconds_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/item_upcoming_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_upcoming_seconds_progress"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                android:text="Seconds"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_below="@+id/item_upcoming_time_box"
+        android:id="@+id/cancelTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Stop CountDown"
+        android:visibility="gone" />
+
+</RelativeLayout>

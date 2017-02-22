@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">TheFinalCountDownProject</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="tabs">
+        <item>Simple</item>
+        <item>Upcoming</item>
+    </string-array>
 </resources>

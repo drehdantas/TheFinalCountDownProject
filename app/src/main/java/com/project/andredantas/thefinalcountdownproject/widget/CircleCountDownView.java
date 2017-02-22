@@ -20,9 +20,11 @@ public class CircleCountDownView extends FrameLayout {
     private ProgressBar progressBarView;
     private TextView progressTextView;
 
-    int progress;
-    int endTime, initTime;
+    long progress;
+    long endTime, initTime;
     boolean firstTime = true;
+
+    OnFinishCycleProgressBar listener;
 
     public CircleCountDownView(Context context) {
         super(context);
@@ -48,12 +50,12 @@ public class CircleCountDownView extends FrameLayout {
         progressBarView.startAnimation(makeVertical);
     }
 
-    public void setCustomProgress(int startTime, int endTime) {
-        progressBarView.setMax(endTime);
-        progressBarView.setSecondaryProgress(endTime);
-        progressBarView.setProgress(startTime);
-        int elapsedTime = endTime - startTime;
-        progressTextView.setText(String.valueOf(elapsedTime));
+    public void setCustomProgress(long startTime, long endTime) {
+        progressBarView.setMax((int) endTime);
+        progressBarView.setSecondaryProgress((int) endTime);
+        progressBarView.setProgress((int) startTime);
+        long elapsedTime = endTime - startTime;
+        progressTextView.setText(String.valueOf((int) elapsedTime));
     }
 
     public void setProgress(int value){
@@ -62,43 +64,50 @@ public class CircleCountDownView extends FrameLayout {
 
     public void onTick(CircleCountDownView countDownView){
         //reset progress when finish
-        if (progress > endTime){
-            progress = 1;
-        }else if (progress == endTime){
+        if (progress == endTime - 1) {
+            progressTextView.setText("0");
+            countDownView.setCustomProgress(progress, endTime);
+            progress = progress + 1;
+        } else if (progress > endTime) {
             //animation when finish
-            ProgressBarAnimation anim = new ProgressBarAnimation(countDownView, endTime, 0);
+            progressTextView.setText(String.valueOf(endTime - 1));
+            ProgressBarAnimation anim = new ProgressBarAnimation(countDownView, endTime, 1);
             anim.setDuration(500);
             countDownView.startAnimation(anim);
-        }
+            progress = 2;
 
-        //init with progress size
-        if (firstTime){
-            progress = endTime - (endTime - initTime);
-            firstTime = false;
-        }
+            if (listener != null)
+                listener.onFinish();
+        }else{
+            //init with progress size
+            if (firstTime){
+                progress = endTime - (endTime - initTime);
+                firstTime = false;
+            }
 
-        countDownView.setCustomProgress(progress, endTime);
-        progress = progress + 1;
+            countDownView.setCustomProgress(progress, endTime);
+            progress = progress + 1;
+        }
     }
 
-    public int getProgress() {
+    public long getProgress() {
         return progress;
     }
 
-    public int getEndTime() {
+    public long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(int endTime) {
+    public void setEndTime(long endTime) {
         this.endTime = endTime;
     }
 
-    public int getInitTime() {
+    public long getInitTime() {
         return initTime;
     }
 
-    public void setInitTime(int initTime) {
-        this.initTime = initTime;
+    public void setInitTime(long initTime) {
+        this.initTime = endTime - initTime;
     }
 
     public boolean isFirstTime() {
@@ -107,5 +116,20 @@ public class CircleCountDownView extends FrameLayout {
 
     public void setFirstTime(boolean firstTime) {
         this.firstTime = firstTime;
+    }
+
+    public void setListener(OnFinishCycleProgressBar listener) {
+        this.listener = listener;
+    }
+
+    public void clear(){
+        progress = 0;
+        endTime = 0;
+        initTime = 0;
+        firstTime = true;
+    }
+
+    public interface OnFinishCycleProgressBar {
+        void onFinish();
     }
 }
