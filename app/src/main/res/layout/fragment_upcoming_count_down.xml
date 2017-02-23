@@ -84,8 +84,8 @@
             <com.project.andredantas.thefinalcountdownproject.widget.CircleCountDownView
                 android:id="@+id/item_upcoming_day_progress"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_centerHorizontal="true" />
 
             <TextView
@@ -95,7 +95,7 @@
                 android:layout_below="@+id/item_upcoming_day_progress"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="2dp"
-                android:text="Dyas"
+                android:text="Days"
                 android:textColor="#FFFFFF" />
 
         </RelativeLayout>
@@ -108,8 +108,8 @@
             <com.project.andredantas.thefinalcountdownproject.widget.CircleCountDownView
                 android:id="@+id/item_upcoming_hour_progress"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_centerHorizontal="true" />
 
             <TextView
@@ -133,8 +133,8 @@
             <com.project.andredantas.thefinalcountdownproject.widget.CircleCountDownView
                 android:id="@+id/item_upcoming_minute_progress"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_centerHorizontal="true" />
 
             <TextView
@@ -157,8 +157,8 @@
             <com.project.andredantas.thefinalcountdownproject.widget.CircleCountDownView
                 android:id="@+id/item_upcoming_seconds_progress"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_centerHorizontal="true" />
 
             <TextView
