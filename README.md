@@ -8,9 +8,9 @@ During a project where we needed to follow mockups design where a countdown was 
 I didn't want to use a library just for this, only native components, and all the demos I was looking didn't work the way I wanted, so based on the project [CountDownProgressView](https://github.com/kishorsinghgour/CountDownProgressView)
 was done according to my needs and In my opinion, better
 
-![](https://media.giphy.com/media/l44Qo4yFeff4Nl23m/source.gif =250x250) 
+![](https://media.giphy.com/media/l44Qo4yFeff4Nl23m/source.gif?v=4&s=200) 
 
-![](https://media.giphy.com/media/26BGLP6mhPM5qdnLG/source.gif =250x250)
+![](https://media.giphy.com/media/26BGLP6mhPM5qdnLG/source.gif?v=4&s=200)
 
 
 ## Installation
